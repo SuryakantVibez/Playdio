@@ -11,13 +11,23 @@
       href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Schoolbell&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="left">
       <div class="top">
         <div class="notchPill">
           <div class="heroPill"><h1>Playdio</h1></div>
-          <div class="timePill"><h1>9:41 am</h1></div>
+          <div class="timePill">
+            <i class="fa-solid fa-radio"></i>
+            <h1>9:41 am</h1>
+          </div>
         </div>
         <div class="visualizer"></div>
       </div>
@@ -42,6 +52,21 @@
         </div>
       </div>
     </div>
-    <div class="right"></div>
+    <div class="right">
+      <div class="searchBar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" class="search" placeholder="Search" />
+      </div>
+
+      <div class="resultList">
+        <button class="stationCard">
+          <div class="stationIcon"></div>
+          <div class="stationInfo">
+            <h2 class="stationName">Lofi Girl Radio</h2>
+            <p class="metadata">320 kbps • Australia • Lofi</p>
+          </div>
+        </button>
+      </div>
+    </div>
   </body>
 </html>
