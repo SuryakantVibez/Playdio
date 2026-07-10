@@ -11,12 +11,13 @@ h2 {
 
 body {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 50% auto 50%;
   box-sizing: border-box;
   padding: 2rem;
   background-color: #928360;
   height: 100dvh;
   width: 100dvw;
+  margin: 0;
 }
 
 .left,
@@ -110,4 +111,58 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.down {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  all: unset;
+  margin: 0.5rem;
+}
+.mediaControls {
+  background-color: #705241;
+  width: 30%;
+}
+
+.playPauseBtn {
+  font-size: 2rem;
+}
+
+.volumeSliderPill {
+  background-color: #705241b7;
+  width: fit-content;
+}
+
+.mediaControls,
+.volumeSliderPill {
+  display: flex;
+  height: 8dvh;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.volumeIcon {
+  font-size: 1.5rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 3rem;
+  color: burlywood;
+  margin: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.volumeSlider {
+  margin-right: 1.5rem;
+}
+
+.fa-solid {
+  color: burlywood;
+  /* font-size: 1rem; */
 }
