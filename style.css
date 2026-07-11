@@ -1,20 +1,22 @@
 * {
   font-family: "Schoolbell", cursive;
   color: var(--text);
+  font-weight: 600;
 }
 
 :root {
   --bg: #9a8c67;
   --surface: #cfc6a7;
   --text: #705241;
-  --accent: #e0cfab;
-  --shadow: rgba(0, 0, 0, 0.25);
+  --accent: #cfc6a7;
+  --shadow: rgba(0, 0, 0, 0.3);
 }
 
 h1,
 h2 {
   font-family: "Beth Ellen", cursive;
   font-size: 0.8rem;
+
   margin: 0;
 }
 
@@ -36,16 +38,18 @@ body {
   justify-content: space-around;
 }
 .top {
+  margin: 0 auto 0 auto;
+  width: 40dvw;
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
 }
 
 .notchPill {
   border-radius: 50px;
-  width: 20dvw;
+  width: 20.5dvw;
   height: 3.5dvw;
-  background-color: #cfc6a7;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px 1px;
+  background-color: var(--accent);
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 0px 150px 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -53,9 +57,9 @@ body {
 
 .heroPill,
 .timePill {
-  height: 2.5dvw;
+  height: 3dvw;
   border-radius: 50px;
-  background-color: #cfc6a7;
+  background-color: var(--accent);
   box-sizing: border-box;
 
   display: flex;
@@ -64,19 +68,25 @@ body {
 }
 
 .heroPill {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px 1px;
-  width: 7dvw;
+  box-shadow: var(--shadow) 0px 0px 20px 1px;
+  width: 8dvw;
 }
 
 .timePill {
   justify-content: space-around;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px 1px;
+  box-shadow: var(--shadow) 0px 0px 20px 1px;
   width: 11dvw;
 }
 
+.fa-radio {
+  color: var(--text) !important;
+}
+
 .visualizer {
-  width: 12dvw;
-  height: 3dvw;
+  margin-left: 3dvw;
+  width: 10dvw;
+  height: 3.5dvw;
+
   background-color: #cfc6a7;
   border-radius: 50px;
 }
@@ -88,11 +98,10 @@ body {
 
   position: relative;
   left: 7.5dvh;
-  /* top: 20dvh; */
   margin: 0;
 
   border: 0.3rem solid whitesmoke;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px var(--shadow);
 }
 
 .channelName {
@@ -182,6 +191,7 @@ button {
 
 .volumeSlider {
   margin-right: 1.5rem;
+  width: 15dvw;
 }
 
 .fa-solid {
