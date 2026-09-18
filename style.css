@@ -48,7 +48,7 @@ body {
 }
 
 .notchPill {
-  border-radius: 45px;
+  border-radius: 43px;
   width: 20.5dvw;
   height: 3.5dvw;
   background-color: var(--accent);
@@ -61,7 +61,7 @@ body {
 .heroPill,
 .timePill {
   height: 3dvw;
-  border-radius: 45px;
+  border-radius: 43px;
   background-color: var(--accent);
   box-sizing: border-box;
 
@@ -91,7 +91,7 @@ body {
   height: 3.5dvw;
 
   background-color: #cfc6a7;
-  border-radius: 45px;
+  border-radius: 43px;
 }
 
 .coverImg {
@@ -177,7 +177,7 @@ button {
   height: 8dvh;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 45px;
+  border-radius: 43px;
 }
 
 .volumeIcon {
@@ -208,7 +208,7 @@ button {
   width: 0.2rem;
   background-color: #263023;
   height: 75dvh;
-  border-radius: 45px;
+  border-radius: 43px;
 }
 
 /* Right */
@@ -223,7 +223,7 @@ button {
 .searchBar {
   background-color: var(--accent);
   height: 8dvh;
-  border-radius: 45px;
+  border-radius: 35px;
   width: 85%;
   display: flex;
   justify-content: left;
@@ -245,8 +245,8 @@ button {
 .resultList {
   background-color: var(--surface);
   width: 85%;
-  height: 58dvh;
-  border-radius: 45px;
+  height: 60dvh;
+  border-radius: 35px;
   overflow: scroll;
 }
 
@@ -279,14 +279,20 @@ button {
 
 .stationInfo {
   margin-left: 5%;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
 
 .stationName {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .metadata {
   opacity: 60%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: 0;
 }
+
