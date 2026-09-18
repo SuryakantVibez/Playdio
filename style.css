@@ -5,10 +5,10 @@
 }
 
 :root {
-  --bg: #9a8c67;
-  --surface: #cfc6a7;
+  --bg: #90845d;
+  --surface: #b4af86;
   --text: #705241;
-  --accent: #cfc6a7;
+  --accent: #cfcaa5;
   --shadow: rgba(0, 0, 0, 0.3);
 }
 
@@ -23,8 +23,9 @@ h2 {
 body {
   display: grid;
   grid-template-columns: 50% auto 50%;
+  justify-items: center;
+  align-items: center;
   box-sizing: border-box;
-  padding: 2rem;
   background-color: var(--bg);
   height: 100dvh;
   width: 100dvw;
@@ -33,6 +34,8 @@ body {
 
 .left,
 .right {
+  aspect-ratio: 1/1;
+  height: 70dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -45,7 +48,7 @@ body {
 }
 
 .notchPill {
-  border-radius: 50px;
+  border-radius: 45px;
   width: 20.5dvw;
   height: 3.5dvw;
   background-color: var(--accent);
@@ -58,7 +61,7 @@ body {
 .heroPill,
 .timePill {
   height: 3dvw;
-  border-radius: 50px;
+  border-radius: 45px;
   background-color: var(--accent);
   box-sizing: border-box;
 
@@ -88,7 +91,7 @@ body {
   height: 3.5dvw;
 
   background-color: #cfc6a7;
-  border-radius: 50px;
+  border-radius: 45px;
 }
 
 .coverImg {
@@ -119,6 +122,7 @@ body {
   margin: 0;
   z-index: -1;
   animation: spinningDisk 20s linear infinite;
+  filter: drop-shadow(4px 4px 10px var(--shadow));
 }
 
 @keyframes spinningDisk {
@@ -173,7 +177,7 @@ button {
   height: 8dvh;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 45px;
 }
 
 .volumeIcon {
@@ -203,6 +207,86 @@ button {
   opacity: 70%;
   width: 0.2rem;
   background-color: #263023;
-  height: 80dvh;
-  border-radius: 50px;
+  height: 75dvh;
+  border-radius: 45px;
+}
+
+/* Right */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchBar {
+  background-color: var(--accent);
+  height: 8dvh;
+  border-radius: 45px;
+  width: 85%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.fa-magnifying-glass {
+  color: var(--text);
+  margin: 1rem;
+  font-size: 1.2rem;
+  aspect-ratio: 1/1;
+}
+.search {
+  all: unset;
+  height: 100%;
+  font-family: "Beth Ellen", cursive;
+}
+
+.resultList {
+  background-color: var(--surface);
+  width: 85%;
+  height: 58dvh;
+  border-radius: 45px;
+  overflow: scroll;
+}
+
+.stationIcon {
+  aspect-ratio: 1/1;
+  background-color: var(--bg);
+  height: 100%;
+  border-radius: 15px;
+}
+
+.stationCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  height: 10dvh;
+  width: 94%;
+  margin: 3%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  padding: 2%;
+  border-radius: 25px;
+}
+
+.stationCard:hover {
+  background-color: #9e946b;
+  scale: 1.015;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+.stationInfo {
+  margin-left: 5%;
+}
+
+.stationName {
+  font-size: 1.2rem;
+}
+
+.metadata {
+  opacity: 60%;
+  font-size: 1rem;
+  margin: 0;
 }
