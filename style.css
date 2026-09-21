@@ -110,6 +110,9 @@ body {
 .channelName {
   font-size: 1.5rem;
   text-align: center;
+  max-width: 35dvw;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .vinyl {
@@ -134,10 +137,17 @@ body {
   }
 }
 
-.musicSet {
+.musicSet,
+.middle {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.middle {
+  flex-direction: column;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .down {
@@ -147,6 +157,11 @@ body {
 
 button {
   all: unset;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+button:active {
+  scale: 0.9;
 }
 
 .previousBtn {
@@ -180,7 +195,7 @@ button {
   border-radius: 43px;
 }
 
-.volumeIcon {
+.volumeIconContainer {
   font-size: 1.5rem;
   border-radius: 50%;
   aspect-ratio: 1/1;
@@ -194,8 +209,45 @@ button {
 }
 
 .volumeSlider {
-  margin-right: 1.5rem;
+  appearance: none;
   width: 15dvw;
+  height: 6px;
+  margin-right: 1.5rem;
+  border-radius: 999px;
+  background: #cfcaa555;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* The draggable knob */
+.volumeSlider::-webkit-slider-thumb {
+  border: 3px solid #705241;
+}
+
+/* Firefox */
+.volumeSlider::-moz-range-thumb {
+  border: none;
+}
+
+.volumeSlider::-moz-range-thumb,
+.volumeSlider::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%;
+  background: burlywood;
+  cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.31, 1.42, 1, 1.01);
+}
+
+.volumeSlider:active {
+  scale: 1.1;
+}
+
+.volumeSlider::-webkit-slider-thumb:active,
+.volumeSlider::-moz-range-thumb:active {
+  border-radius: 3px;
+  opacity: 50%;
 }
 
 .fa-solid {
@@ -264,6 +316,7 @@ button {
   align-items: center;
   height: 10dvh;
   width: 94%;
+  max-width: 94%;
   margin: 3%;
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
@@ -284,6 +337,7 @@ button {
 }
 
 .stationName {
+  max-width: 35dvw;
   font-size: 1rem;
   white-space: nowrap;
   overflow: hidden;
@@ -294,5 +348,8 @@ button {
   opacity: 60%;
   font-size: 0.8rem;
   margin: 0;
+  text-overflow: ellipsis;
+  max-width: 25dvw;
+  white-space: nowrap;
+  overflow: hidden;
 }
-
