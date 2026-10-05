@@ -98,6 +98,7 @@ body {
   height: 30dvh;
   width: 30dvh;
   object-fit: cover;
+  background-image: url(media/sampleCoverArt.jpg);
 
   position: relative;
   left: 7.5dvh;
@@ -135,6 +136,24 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes switchStation {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(50px) scale(1.01);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+.switchStation {
+  animation: switchStation 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .musicSet,

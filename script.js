@@ -49,13 +49,21 @@ async function getStations() {
     results.appendChild(card);
 
     // Make the clicking work
-
+    coverImg = document.querySelector(".coverImg");
+    vinyl = document.querySelector(".vinyl");
     card.addEventListener("click", () => {
       currentStation = index;
       audio.src = station.url_resolved;
       audio.play();
 
       nowPlaying.textContent = station.name;
+      coverImg.src = station.favicon;
+
+      vinyl.classList.add("switchStation");
+
+      vinyl.addEventListener("animationend", () => {
+        vinyl.classList.remove("switchStation");
+      });
     });
   });
 }
