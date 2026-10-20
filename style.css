@@ -89,9 +89,77 @@ body {
   margin-left: 3dvw;
   width: 10dvw;
   height: 3.5dvw;
+  padding: 0 1.1dvw;
+  box-sizing: border-box;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2dvw;
   background-color: #cfc6a7;
   border-radius: 43px;
+  overflow: hidden;
+}
+
+.visualizer span {
+  flex: 1;
+  min-width: 2px;
+  height: 18%;
+  border-radius: 999px;
+  background-color: var(--text);
+  transform-origin: center;
+  animation: visualizerPulse 0.85s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+.visualizer.playing span {
+  animation-play-state: running;
+}
+
+.visualizer span:nth-child(2n) {
+  animation-duration: 0.62s;
+}
+
+.visualizer span:nth-child(3n) {
+  animation-duration: 1.05s;
+}
+
+.visualizer span:nth-child(4n) {
+  animation-duration: 0.72s;
+}
+
+.visualizer span:nth-child(1),
+.visualizer span:nth-child(9) {
+  animation-delay: -0.3s;
+}
+
+.visualizer span:nth-child(2),
+.visualizer span:nth-child(7) {
+  animation-delay: -0.6s;
+}
+
+.visualizer span:nth-child(3),
+.visualizer span:nth-child(6) {
+  animation-delay: -0.15s;
+}
+
+@keyframes visualizerPulse {
+  from {
+    height: 15%;
+  }
+  to {
+    height: 85%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visualizer span {
+    animation: none;
+  }
+
+  .visualizer.playing span {
+    height: 45%;
+  }
 }
 
 .coverImg {

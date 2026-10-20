@@ -9,6 +9,18 @@ search.addEventListener("keydown", (event) => {
 nowPlaying = document.querySelector(".channelName");
 
 const audio = new Audio();
+const visualizer = document.querySelector(".visualizer");
+
+// CSS-only bars: no Web Audio API, so playback audio stays untouched.
+audio.addEventListener("playing", () => {
+  visualizer.classList.add("playing");
+});
+
+["pause", "waiting", "ended", "error"].forEach((eventName) => {
+  audio.addEventListener(eventName, () => {
+    visualizer.classList.remove("playing");
+  });
+});
 
 let stations = [];
 let currentStation = 0;
