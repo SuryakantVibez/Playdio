@@ -102,18 +102,28 @@ body {
 }
 
 .visualizer span {
-  flex: 1;
-  min-width: 2px;
-  height: 18%;
+  min-width: 6px;
+  width: 7px;
+  height: 60%;
   border-radius: 999px;
   background-color: var(--text);
+
   transform-origin: center;
-  animation: visualizerPulse 0.85s ease-in-out infinite alternate;
-  animation-play-state: paused;
+  transform: scaleY(0.15);
+  transition: transform 0.45s ease-in-out;
 }
 
 .visualizer.playing span {
-  animation-play-state: running;
+  animation: visualizerPulse 0.85s ease-in-out infinite alternate;
+}
+
+@keyframes visualizerPulse {
+  from {
+    transform: scaleY(0.2);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
 
 .visualizer span:nth-child(2n) {
@@ -145,20 +155,21 @@ body {
 
 @keyframes visualizerPulse {
   from {
-    height: 15%;
+    transform: scaleY(0.2);
   }
   to {
-    height: 85%;
+    transform: scaleY(1);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .visualizer span {
     animation: none;
+    transform: scaleY(0.15);
   }
 
   .visualizer.playing span {
-    height: 45%;
+    transform: scaleY(0.45);
   }
 }
 

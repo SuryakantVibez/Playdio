@@ -76,7 +76,6 @@ function playStation(index) {
 
   audio.src = station.url_resolved;
   audio.play();
-
   nowPlaying.textContent = station.name;
   coverImg.src = station.favicon;
 
