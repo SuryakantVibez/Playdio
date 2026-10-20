@@ -322,6 +322,8 @@ button:active {
 }
 
 .stationIcon {
+  background-image: url(media/vinyl.png);
+  background-size: contain;
   aspect-ratio: 1/1;
   background-color: var(--bg);
   height: 100%;

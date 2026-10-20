@@ -35,7 +35,7 @@ async function getStations() {
     card.classList.add("stationCard");
     let tag = station.tags.split(",")[0];
     card.innerHTML = `
-          <img class= "stationIcon" src="${station.favicon}" alt="">
+          <img class= "stationIcon" src="${station.favicon}">
 
       <div class="stationInfo">
         <h2 class="stationName">${station.name}</h2>
@@ -52,19 +52,25 @@ async function getStations() {
     coverImg = document.querySelector(".coverImg");
     vinyl = document.querySelector(".vinyl");
     card.addEventListener("click", () => {
-      currentStation = index;
-      audio.src = station.url_resolved;
-      audio.play();
-
-      nowPlaying.textContent = station.name;
-      coverImg.src = station.favicon;
-
-      vinyl.classList.add("switchStation");
-
-      vinyl.addEventListener("animationend", () => {
-        vinyl.classList.remove("switchStation");
-      });
+      playStation(index);
     });
+  });
+}
+
+function playStation(index) {
+  currentStation = index;
+
+  const station = stations[currentStation];
+
+  audio.src = station.url_resolved;
+  audio.play();
+
+  nowPlaying.textContent = station.name;
+  coverImg.src = station.favicon;
+
+  vinyl.classList.add("switchStation");
+  vinyl.addEventListener("animationend", () => {
+    vinyl.classList.remove("switchStation");
   });
 }
 
@@ -72,14 +78,10 @@ async function getStations() {
 
 document.querySelector(".previousBtn").onclick = () => {
   currentStation--;
-
   if (currentStation < 0) {
     currentStation = stations.length - 1;
   }
-
-  audio.src = stations[currentStation].url_resolved;
-  audio.play();
-  nowPlaying.textContent = stations[currentStation].name;
+  playStation(currentStation);
 };
 
 document.querySelector(".playPauseBtn").onclick = () => {
@@ -96,10 +98,7 @@ document.querySelector(".nextBtn").onclick = () => {
   if (currentStation >= stations.length) {
     currentStation = 0;
   }
-
-  audio.src = stations[currentStation].url_resolved;
-  audio.play();
-  nowPlaying.textContent = stations[currentStation].name;
+  playStation(currentStation);
 };
 
 const volumeIcon = document.querySelector(".volumeIcon");
