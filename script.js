@@ -73,7 +73,7 @@ function playStation(index) {
   currentStation = index;
 
   const station = stations[currentStation];
-
+  updateMediaSession(station);
   audio.src = station.url_resolved;
   audio.play();
   nowPlaying.textContent = station.name;
@@ -136,3 +136,32 @@ document.querySelector(".volumeSlider").addEventListener("input", (event) => {
     currentVolumeIcon = "high";
   }
 });
+
+function updateMediaSession(station) {
+  if (!("mediaSession" in navigator)) return;
+
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: station.name,
+    artist: "Playdio Radio",
+    album: "Internet Radio",
+
+    artwork: [
+      {
+        src:
+          station.favicon ||
+          new URL("media/Playdio Logo.png", document.baseURI).href,
+        sizes: "512x512",
+      },
+    ],
+  });
+}
+
+if ("mediaSession" in navigator) {
+  navigator.mediaSession.setActionHandler("nexttrack", () => {
+    document.querySelector(".nextBtn").click();
+  });
+
+  navigator.mediaSession.setActionHandler("previoustrack", () => {
+    document.querySelector(".previousBtn").click();
+  });
+}
